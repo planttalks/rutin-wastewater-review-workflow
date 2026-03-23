@@ -1,0 +1,5 @@
+# Optional: in silico pipeline (scripts/rutin_insilico_sections_2_4.py)
+httpx>=0.27
+rdkit>=2023.9.1
+numpy>=1.24
+scipy>=1.10
