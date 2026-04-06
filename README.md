@@ -3,7 +3,6 @@
 [![CI](https://github.com/planttalks/rutin-wastewater-review-workflow/actions/workflows/ci.yml/badge.svg)](https://github.com/planttalks/rutin-wastewater-review-workflow/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![CITATION](https://img.shields.io/badge/cite-CITATION.cff-blue)](CITATION.cff)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.placeholder.svg)](https://doi.org/10.5281/zenodo.placeholder)
 
 Reproducible scripts and supplementary outputs for a critical mini-review on rutin at the water-plant-virus interface in nature-based wastewater treatment.
 

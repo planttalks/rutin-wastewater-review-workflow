@@ -1,11 +1,11 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-Multi-ligand AutoDock Vina vs MS2 coat 1MSC — same search box as rutin_vina_docking_prep.py.
+Multi-ligand AutoDock Vina vs MS2 coat 1MSC -- same search box as rutin_vina_docking_prep.py.
 
 Writes workflow_outputs/02_analysis/docking/rutin_1MSC_multiligand/
   summary.csv, vina_multiligand_summary.md, per-ligand logs.
 
-Hypothesis-level only; blind whole-protein box — not comparable to site-targeted [7].
+Hypothesis-level only; blind whole-protein box -- not comparable to site-targeted [7].
 """
 from __future__ import annotations
 
@@ -214,7 +214,7 @@ def main() -> int:
         "|---------------------------|------------------------:|------|",
     ]
     for r in rows:
-        aff = r.get("best_affinity_kcal_mol") or "—"
+        aff = r.get("best_affinity_kcal_mol") or "--"
         prep = "OK" if r["prep_ok"] else "fail"
         md_lines.append(f"| {r['label']} | {aff} | {prep} |")
     md_lines.extend(

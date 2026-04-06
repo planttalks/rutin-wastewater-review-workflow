@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 Prepare AutoDock Vina inputs for rutin vs MS2 coat protein (1MSC).
 
@@ -9,7 +9,7 @@ Outputs under workflow_outputs/02_analysis/docking/rutin_1MSC/:
   1MSC.pdb, receptor.pdbqt, ligand.pdbqt, vina_config.txt,
   vina_docking_analysis.md, rutin_vina_manifest.json
 
-Does not claim biological validity of box or scores—hypothesis-level prep only.
+Does not claim biological validity of box or scores--hypothesis-level prep only.
 """
 from __future__ import annotations
 
@@ -209,7 +209,7 @@ def main() -> int:
         urlretrieve(PDB_URL, pdb)
     manifest["pdb_bytes"] = pdb.stat().st_size
 
-    # Receptor: rigid pdbqt (exclude waters common in PDB — obabel strips many)
+    # Receptor: rigid pdbqt (exclude waters common in PDB -- obabel strips many)
     r1 = run_ob(["-ipdb", str(pdb), "-opdbqt", "-O", str(rec), "-xr"], OUT)
     if r1.returncode != 0 or not rec.exists():
         manifest["receptor_error"] = (r1.stderr or r1.stdout)[:2000]
@@ -320,7 +320,7 @@ energy_range = 4
 - **Ran:** {'yes' if vina_ran else 'no'}
 - **Best mode 1 affinity (if run):** {best_affinity if best_affinity is not None else 'N/A'}
 
-`scripts/README-docking-tools.md` — Vina, Qvina, shell scripts. Re-run: `python scripts/rutin_vina_docking_prep.py` (or `--prep-only` then your `.sh`).
+`scripts/README-docking-tools.md` -- Vina, Qvina, shell scripts. Re-run: `python scripts/rutin_vina_docking_prep.py` (or `--prep-only` then your `.sh`).
 """
     (OUT / "vina_docking_analysis.md").write_text(md, encoding="utf-8")
     print(f"Wrote {OUT}")

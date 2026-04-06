@@ -27,11 +27,10 @@ jobs:
           channels: conda-forge,defaults
           channel-priority: strict
           activate-environment: rutin-review
-          environment-file: environment.yml
 
-      - name: Install pytest into conda env
+      - name: Install dependencies
         shell: bash -el {0}
-        run: conda run -n rutin-review pip install pytest
+        run: conda install -y rdkit numpy pandas scipy && pip install pytest httpx
 
       - name: Run smoke tests
         shell: bash -el {0}
