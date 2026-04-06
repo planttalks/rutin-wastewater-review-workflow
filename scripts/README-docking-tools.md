@@ -1,4 +1,4 @@
-# Docking tools in `scripts/` (Vina, Qvina, shell helpers)
+﻿# Docking tools in `scripts/` (Vina, Qvina, shell helpers)
 
 ## What the Python driver does
 
@@ -8,11 +8,11 @@
 Engines that accept **`--config vina_config.txt`** include:
 
 - **AutoDock Vina** (`vina`, `vina_1.2.7_win.exe`, …)
-- **Quick Vina 2** (`qvina2.1`, `Qvina2-w.exe`, …) — same config style as Vina for standard runs
+- **Quick Vina 2** (`qvina2.1`, `Qvina2-w.exe`, …) -- same config style as Vina for standard runs
 
 ## Resolution order (which binary runs)
 
-1. **`VINA_EXE`** — full path to any compatible executable (forces choice if several tools exist).
+1. **`VINA_EXE`** -- full path to any compatible executable (forces choice if several tools exist).
 2. **`vina` on PATH**
 3. **Known filenames** in this folder:  
    `vina_1.2.7_win.exe`, `vina.exe`, `qvina2.1.exe`, `qvina2.exe`, `Qvina2-w.exe`, `qvina-w.exe`, `QuickVina2-W.exe`, `quickvina2.exe`

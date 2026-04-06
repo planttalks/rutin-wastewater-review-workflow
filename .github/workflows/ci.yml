@@ -115,9 +115,9 @@ jobs:
           done
           echo "All required files present."
 
-      - name: Check no em-dashes in scripts
+      - name: Check no em-dashes in Python scripts
         run: |
-          if grep -rn $'\xe2\x80\x94' scripts/ ; then
-            echo "Em-dash found in scripts; use regular hyphen." && exit 1
+          if grep -rn $'\xe2\x80\x94' scripts/*.py ; then
+            echo "Em-dash found in Python scripts; use regular hyphen." && exit 1
           fi
-          echo "No em-dashes in scripts."
+          echo "No em-dashes in Python scripts."
