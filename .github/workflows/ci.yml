@@ -1,0 +1,131 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # -----------------------------------------------------------------------
+  # Job 1: Descriptor smoke tests (no external binaries needed)
+  # -----------------------------------------------------------------------
+  test-descriptors:
+    name: Descriptor tests (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install RDKit via conda (most reliable)
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          auto-update-conda: true
+          python-version: ${{ matrix.python-version }}
+          channels: conda-forge,defaults
+          channel-priority: strict
+          activate-environment: rutin-review
+          environment-file: environment.yml
+
+      - name: Install pytest
+        shell: bash -el {0}
+        run: pip install pytest
+
+      - name: Run smoke tests
+        shell: bash -el {0}
+        run: pytest tests/test_smoke.py -v --tb=short
+
+  # -----------------------------------------------------------------------
+  # Job 2: Lint and format check
+  # -----------------------------------------------------------------------
+  lint:
+    name: Lint (ruff)
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install ruff
+        run: pip install ruff
+
+      - name: Run ruff (warnings only — do not block on style)
+        run: ruff check scripts/ tests/ --exit-zero
+
+  # -----------------------------------------------------------------------
+  # Job 3: Validate data/species.csv SMILES (RDKit parse check)
+  # -----------------------------------------------------------------------
+  validate-smiles:
+    name: Validate SMILES (data/species.csv)
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up conda + RDKit
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          python-version: "3.11"
+          channels: conda-forge,defaults
+          channel-priority: strict
+          activate-environment: rutin-smiles
+          conda-remove-defaults: true
+
+      - name: Install RDKit
+        shell: bash -el {0}
+        run: conda install -y -c conda-forge rdkit
+
+      - name: Check all SMILES parse
+        shell: bash -el {0}
+        run: |
+          python - <<'EOF'
+          import csv, sys
+          from rdkit import Chem
+          from pathlib import Path
+
+          rows = list(csv.DictReader(open("data/species.csv")))
+          failures = [r["name"] for r in rows if Chem.MolFromSmiles(r["smiles"]) is None]
+          if failures:
+              print("SMILES parse failures:", failures, file=sys.stderr)
+              sys.exit(1)
+          print(f"All {len(rows)} SMILES parsed OK")
+          EOF
+
+  # -----------------------------------------------------------------------
+  # Job 4: Repository hygiene checks
+  # -----------------------------------------------------------------------
+  hygiene:
+    name: Repo hygiene
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check required files exist
+        run: |
+          for f in LICENSE CITATION.cff environment.yml requirements.txt \
+                   data/species.csv Supplementary.md README.md; do
+            if [ ! -f "$f" ]; then
+              echo "MISSING: $f" && exit 1
+            fi
+          done
+          echo "All required files present."
+
+      - name: Check no em-dashes in scripts
+        run: |
+          if grep -rn $'\xe2\x80\x94' scripts/ ; then
+            echo "Em-dash found in scripts; use regular hyphen." && exit 1
+          fi
+          echo "No em-dashes in scripts."

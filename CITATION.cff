@@ -1,0 +1,73 @@
+cff-version: 1.2.0
+message: "If you use this workflow or its outputs, please cite both the associated manuscript and this repository."
+type: software
+title: "rutin-wastewater-review-workflow"
+abstract: >
+  Reproducible computational workflow (descriptor calculation, BioTransformer
+  environmental microbial metabolism, AutoDock Vina multi-ligand docking) supporting
+  a critical mini-review on rutin at the water–plant–virus interface in nature-based
+  wastewater treatment. Outputs are hypothesis-generating only.
+authors:
+  - family-names: Zure
+    given-names: Diaiti
+    affiliation: "Department of Environmental Science and Engineering, Tunghai University, Taiwan"
+  - family-names: Rahim
+    given-names: Abdul
+    affiliation: "Department of Environmental Science and Engineering, Tunghai University, Taiwan"
+  - family-names: Kuo
+    given-names: Hsion-Wen David
+    affiliation: "Department of Environmental Science and Engineering, Tunghai University, Taiwan"
+    email: hwkuo@thu.edu.tw
+repository-code: "https://github.com/planttalks/rutin-wastewater-review-workflow"
+license: MIT
+version: "0.1.0"
+date-released: "2026-03-27"
+keywords:
+  - rutin
+  - flavonoid
+  - wastewater treatment
+  - constructed wetlands
+  - antiviral phytoremediation
+  - AutoDock Vina
+  - BioTransformer
+  - RDKit
+  - molecular descriptors
+  - EPEA framework
+references:
+  - type: article
+    title: >
+      Rutin at the Water–Plant–Virus Interface: A Critical Mini-Review
+      for Nature-Based Wastewater Treatment
+    authors:
+      - family-names: Zure
+        given-names: Diaiti
+        affiliation: "Department of Environmental Science and Engineering, Tunghai University, Taiwan"
+      - family-names: Rahim
+        given-names: Abdul
+        affiliation: "Department of Environmental Science and Engineering, Tunghai University, Taiwan"
+      - family-names: Kuo
+        given-names: Hsion-Wen David
+        affiliation: "Department of Environmental Science and Engineering, Tunghai University, Taiwan"
+        email: hwkuo@thu.edu.tw
+    journal: "Bioresource Technology"
+    publisher: "Elsevier"
+    status: "with-editor"
+    notes: >
+      Submitted to Bioresource Technology (Elsevier), Special Issue
+      "Nature-based Systems for Wastewater Treatment". Currently with editor
+      (March 2026).
+  - type: article
+    title: >
+      Insights of phytoremediation mechanisms for viruses based on in-vitro,
+      in-vivo and in-silico assessments of selected herbal plants
+    authors:
+      - family-names: Zure
+        given-names: Diaiti
+      - family-names: Kuo
+        given-names: Hsion-Wen David
+      - family-names: Drizo
+        given-names: Aleksandra
+    journal: Chemosphere
+    volume: 351
+    year: 2024
+    doi: "10.1016/j.chemosphere.2023.141101"

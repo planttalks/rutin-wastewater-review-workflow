@@ -1,0 +1,11 @@
+# Core in-silico pipeline
+# Install via: pip install -r requirements.txt
+# For RDKit, prefer conda:  conda env create -f environment.yml
+rdkit>=2023.9.1
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+httpx>=0.27
+
+# Development / testing only
+pytest>=7.4

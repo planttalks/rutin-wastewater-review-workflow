@@ -1,0 +1,13 @@
+name,smiles,role,source
+rutin_parent,CC1C(C(C(C(O1)OCC2C(C(C(C(O2)OC3=C(OC4=CC(=CC(=C4C3=O)O)O)C5=CC(=C(C=C5)O)O)O)O)O)O)O)O,Parent glycoside; subject of phage docking studies,PubChem CID 5280805
+quercetin_aglycone,Oc1ccc(-c2oc3cc(O)cc(O)c3c(=O)c2O)cc1O,Dominant first-step deglycosylation product,PubChem CID 5280343
+isorhamnetin,COc1ccc(-c2oc3cc(O)cc(O)c3c(=O)c2O)cc1O,Illustrative O-methylated flavonol (microbial methylation),PubChem CID 5281654
+taxifolin,O=C1c2c(O)cc(O)cc2OC(c2ccc(O)c(O)c2)C1O,Dihydroflavonol; illustrative ring-reduced class,PubChem CID 439533
+protocatechuic_acid,Oc1ccc(C(=O)O)cc1O,Small phenolic from ring cleavage pathways,PubChem CID 72
+BT_env_disaccharide,CC1OC(OCC2OC(O)C(O)C(O)C2O)C(O)C(O)C1O,BioTransformer ENVMICRO product; rutin Depolymerization (~326 Da),BioTransformer 3.0 ENVMICRO BTM00001
+BT_env_quercetin,O=c1c(O)c(-c2ccc(O)c(O)c2)oc2cc(O)cc(O)c12,BioTransformer ENVMICRO product; rutin Depolymerization (~302 Da),BioTransformer 3.0 ENVMICRO BTM00002
+BT_env_scaffold_286,O=c1cc(-c2ccc(O)c(O)c2)oc2cc(O)cc(O)c12,BioTransformer ENVMICRO product; rutin Depolymerization (~286 Da),BioTransformer 3.0 ENVMICRO BTM00003
+BT_Q_epimer,O=C1C=CC(c2oc3cc(O)cc(O)c3c(=O)c2O)=CC1O,BioTransformer ENVMICRO product; quercetin epimerization,BioTransformer 3.0 ENVMICRO
+BT_Q_benzopyran,O=C1C(=O)C(c2ccc(O)c(O)c2)Oc2cc(O)cc(O)c21,BioTransformer ENVMICRO product; quercetin benzopyran-dione,BioTransformer 3.0 ENVMICRO
+BT_Q_dicarboxy,O=C(O)C=CC(=CC(=O)O)c1oc2cc(O)cc(O)c2c(=O)c1O,BioTransformer ENVMICRO product; quercetin dicarboxylic derivative,BioTransformer 3.0 ENVMICRO
+BT_Q_aldehyde_acid,O=CC(=CC=C(O)C(=O)O)c1oc2cc(O)cc(O)c2c(=O)c1O,BioTransformer ENVMICRO product; quercetin aldehyde-acid (neutral form),BioTransformer 3.0 ENVMICRO

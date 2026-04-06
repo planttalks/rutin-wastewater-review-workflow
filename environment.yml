@@ -1,0 +1,29 @@
+name: rutin-review
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - rdkit>=2023.9.1
+  - numpy>=1.24
+  - pandas>=2.0
+  - scipy>=1.10
+  - pip
+  - pip:
+      - httpx>=0.27
+
+# External system tools (install separately — not available via conda):
+#   AutoDock Vina v1.2.7  https://github.com/ccsb-scripps/AutoDock-Vina/releases
+#     Windows: download vina_1.2.7_win.exe and place in scripts/
+#     Linux:   apt install autodock-vina  OR  download from GitHub
+#   Open Babel >=3.1.1    https://openbabel.org/wiki/Install
+#     Windows: https://github.com/openbabel/openbabel/releases
+#     Linux:   apt install openbabel  OR  conda install -c conda-forge openbabel
+#
+# After installing obabel, set (if not on PATH):
+#   export OBABEL_EXE=/path/to/obabel          # Linux/macOS
+#   $env:OBABEL_EXE = "C:\path\to\obabel.exe"  # PowerShell
+#
+# BioTransformer 3.0 (optional, for re-running fetch):
+#   Either use the public API (scripts/biotransformer_fetch_rutin.py, requires httpx)
+#   or run the local JAR: see docs/BioTransformer-local-JAR.md
