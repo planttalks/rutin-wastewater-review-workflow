@@ -1,12 +1,15 @@
 cff-version: 1.2.0
 message: "If you use this workflow or its outputs, please cite both the associated manuscript and this repository."
 type: software
-title: "rutin-wastewater-review-workflow"
+title: "Computational Workflow for Mechanistic Prior Generation: Rutin at the Water-Plant-Virus Interface"
 abstract: >
-  Reproducible computational workflow (descriptor calculation, BioTransformer
-  environmental microbial metabolism, AutoDock Vina multi-ligand docking) supporting
-  a critical mini-review on rutin at the water–plant–virus interface in nature-based
-  wastewater treatment. Outputs are hypothesis-generating only.
+  Reproducible computational workflow (RDKit descriptor calculation, BioTransformer
+  environmental microbial metabolism prediction, AutoDock Vina multi-ligand docking)
+  supporting a critical mini-review on rutin at the water-plant-virus interface in
+  nature-based wastewater treatment. The workflow provides mechanistic priors,
+  identifies metabolic pathways, and quantifies ligand-binding potentials to guide
+  future empirical LC-MS/MS and infectivity-based confirmation. All outputs are
+  hypothesis-generating only and do not replace validation in complex matrices.
 authors:
   - family-names: Zure
     given-names: Diaiti

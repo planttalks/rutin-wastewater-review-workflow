@@ -1,12 +1,12 @@
-# Rutin Wastewater Review Workflow
+# Computational Workflow for Mechanistic Prior Generation: Rutin at the Water-Plant-Virus Interface
 
 [![CI](https://github.com/planttalks/rutin-wastewater-review-workflow/actions/workflows/ci.yml/badge.svg)](https://github.com/planttalks/rutin-wastewater-review-workflow/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![CITATION](https://img.shields.io/badge/cite-CITATION.cff-blue)](CITATION.cff)
 
-Reproducible scripts and supplementary outputs for a critical mini-review on rutin at the water-plant-virus interface in nature-based wastewater treatment.
+Reproducible computational scripts and supplementary outputs supporting a critical mini-review on rutin at the water-plant-virus interface in nature-based wastewater treatment. The integration of computational tools within the EPEA framework is intended to provide mechanistic priors, identify metabolic pathways, and quantify ligand-binding potentials that are otherwise absent from the literature. This computational layer is designed to guide future empirical LC-MS/MS and infectivity-based confirmation rather than to replace the validation of active species in complex matrices.
 
-> **Scope:** All computation is hypothesis-generating only. Outputs support evidence synthesis for manuscript sections 2-4 and Supplementary Information (S1-S4); they do not validate treatment performance.
+> **Scope:** All outputs are hypothesis-generating only and support evidence synthesis for manuscript sections 2-4 and Supplementary Information (S1-S4). They do not predict treatment performance or substitute for infectivity assays in complex environmental matrices.
 
 ---
 
