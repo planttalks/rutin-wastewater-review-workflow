@@ -5,9 +5,9 @@
 [![CITATION](https://img.shields.io/badge/cite-CITATION.cff-blue)](CITATION.cff)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.placeholder.svg)](https://doi.org/10.5281/zenodo.placeholder)
 
-Reproducible scripts and supplementary outputs for a critical mini-review on rutin at the waterΓÇôplantΓÇôvirus interface in nature-based wastewater treatment.
+Reproducible scripts and supplementary outputs for a critical mini-review on rutin at the water-plant-virus interface in nature-based wastewater treatment.
 
-> **Scope:** All computation is hypothesis-generating only. Outputs support evidence synthesis for manuscript sections 2ΓÇô4 and Supplementary Information (S1ΓÇôS4); they do not validate treatment performance.
+> **Scope:** All computation is hypothesis-generating only. Outputs support evidence synthesis for manuscript sections 2-4 and Supplementary Information (S1-S4); they do not validate treatment performance.
 
 ---
 
@@ -22,7 +22,7 @@ The review organises evidence and computational outputs around the **EPEA (Evide
 | **B3** Plant internalisation | Virus and rutin co-localisation in tissues | Species pool for future assay design |
 | **B4** Intracellular transformation | Metabolism shifts active species | Docking screen: parent vs. products (Table S4) |
 
-Computational outputs (descriptors ΓåÆ metabolites ΓåÆ docking affinities) are mapped to B1ΓÇôB4 to identify which species and compartments should be prioritised in bench-scale experiments. They do **not** predict log-reduction or replace infectivity assays.
+Computational outputs (descriptors -> metabolites -> docking affinities) are mapped to B1-B4 to identify which species and compartments should be prioritised in bench-scale experiments. They do **not** predict log-reduction or replace infectivity assays.
 
 ---
 
@@ -30,33 +30,33 @@ Computational outputs (descriptors ΓåÆ metabolites ΓåÆ docking affinities)
 
 ```
 .
-Γö£ΓöÇΓöÇ data/
-Γöé   ΓööΓöÇΓöÇ species.csv                  # Canonical SMILES source for all ligands
-Γö£ΓöÇΓöÇ scripts/
-Γöé   Γö£ΓöÇΓöÇ rutin_insilico_descriptors_core.py   # Step 1: RDKit descriptors
-Γöé   Γö£ΓöÇΓöÇ rutin_vina_docking_prep.py           # Step 2: Receptor + rutin PDBQT prep
-Γöé   Γö£ΓöÇΓöÇ rutin_multiligand_vina_1MSC.py       # Step 3: Multi-ligand docking
-Γöé   Γö£ΓöÇΓöÇ biotransformer_fetch_rutin.py        # Optional: BioTransformer API
-Γöé   Γö£ΓöÇΓöÇ biotransformer_merge_*.py            # Optional: merge BT outputs
-Γöé   ΓööΓöÇΓöÇ README-docking-tools.md             # Vina / Qvina / obabel install notes
-Γö£ΓöÇΓöÇ tests/
-Γöé   ΓööΓöÇΓöÇ test_smoke.py                # pytest: descriptors, SMILES, docking CSV
-Γö£ΓöÇΓöÇ workflow_outputs/
-Γöé   ΓööΓöÇΓöÇ 02_analysis/                 # Generated outputs (not re-committed after release)
-Γö£ΓöÇΓöÇ Supplementary.md                 # Tables S1ΓÇôS4
-Γö£ΓöÇΓöÇ environment.yml                  # Conda environment (recommended)
-Γö£ΓöÇΓöÇ requirements.txt                 # pip fallback + pytest
-Γö£ΓöÇΓöÇ Makefile                         # Ordered pipeline (make all / make test)
-Γö£ΓöÇΓöÇ CITATION.cff                     # Machine-readable citation
-Γö£ΓöÇΓöÇ CHANGELOG.md
-ΓööΓöÇΓöÇ LICENSE
++-- data/
+|   +-- species.csv                  # Canonical SMILES source for all ligands
++-- scripts/
+|   +-- rutin_insilico_descriptors_core.py   # Step 1: RDKit descriptors
+|   +-- rutin_vina_docking_prep.py           # Step 2: Receptor + rutin PDBQT prep
+|   +-- rutin_multiligand_vina_1MSC.py       # Step 3: Multi-ligand docking
+|   +-- biotransformer_fetch_rutin.py        # Optional: BioTransformer API
+|   +-- biotransformer_merge_*.py            # Optional: merge BT outputs
+|   +-- README-docking-tools.md             # Vina / Qvina / obabel install notes
++-- tests/
+|   +-- test_smoke.py                # pytest: descriptors, SMILES, docking CSV
++-- workflow_outputs/
+|   +-- 02_analysis/                 # Generated outputs (not re-committed after release)
++-- Supplementary.md                 # Tables S1-S4
++-- environment.yml                  # Conda environment (recommended)
++-- requirements.txt                 # pip fallback + pytest
++-- Makefile                         # Ordered pipeline (make all / make test)
++-- CITATION.cff                     # Machine-readable citation
++-- CHANGELOG.md
++-- LICENSE
 ```
 
 ---
 
 ## Quick start
 
-### 1 ΓÇö Install dependencies
+### 1 - Install dependencies
 
 **Recommended (conda, cross-platform RDKit):**
 
@@ -73,7 +73,7 @@ pip install -r requirements.txt
 
 > RDKit via pip can be unreliable on some platforms. If `from rdkit import Chem` fails, use the conda route.
 
-### 2 ΓÇö Install external tools
+### 2 - Install external tools
 
 | Tool | Version | Install |
 |------|---------|---------|
@@ -82,7 +82,7 @@ pip install -r requirements.txt
 
 Set `OBABEL_EXE` / `VINA_EXE` environment variables if the tools are not on `PATH`. See `scripts/README-docking-tools.md` for QuickVina2 and Qvina-W alternatives.
 
-### 3 ΓÇö Run the pipeline
+### 3 - Run the pipeline
 
 ```bash
 # Run all three steps in order
@@ -97,7 +97,7 @@ make docking-multi  # Step 3: Multi-ligand Vina vs 1MSC
 make biotransformer
 ```
 
-### 4 ΓÇö Run tests
+### 4 - Run tests
 
 ```bash
 make test
@@ -150,4 +150,4 @@ See `CITATION.cff` for the machine-readable form (GitHub will render a "Cite thi
 
 ## License
 
-MIT ΓÇö see [LICENSE](LICENSE).
+MIT - see [LICENSE](LICENSE).
