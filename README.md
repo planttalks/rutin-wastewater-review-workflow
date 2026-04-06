@@ -148,6 +148,16 @@ See `CITATION.cff` for the machine-readable form (GitHub will render a "Cite thi
 
 ---
 
+## Contributors
+
+| Name | Role | Affiliation |
+|---|---|---|
+| **Diaiti Zure** | Lead author · computational workflow design · manuscript writing | Department of Environmental Science and Engineering, Tunghai University, Taiwan |
+| Abdul Rahim | Co-author · methodology · manuscript review | Department of Environmental Science and Engineering, Tunghai University, Taiwan |
+| Hsion-Wen David Kuo | Corresponding author · supervision · project administration | Department of Environmental Science and Engineering, Tunghai University, Taiwan |
+
+---
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
