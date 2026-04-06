@@ -4,15 +4,15 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![CITATION](https://img.shields.io/badge/cite-CITATION.cff-blue)](CITATION.cff)
 
-Reproducible computational scripts and supplementary outputs supporting a critical mini-review on rutin at the water-plant-virus interface in nature-based wastewater treatment. The integration of computational tools within the EPEA framework is intended to provide mechanistic priors, identify metabolic pathways, and quantify ligand-binding potentials that are otherwise absent from the literature. This computational layer is designed to guide future empirical LC-MS/MS and infectivity-based confirmation rather than to replace the validation of active species in complex matrices.
+Reproducible computational scripts and supplementary outputs supporting a critical mini-review on rutin at the water-plant-virus interface in nature-based wastewater treatment. The integration of computational tools within the four-barrier antiviral phytoremediation model is intended to provide mechanistic priors, identify metabolic pathways, and quantify ligand-binding potentials that are otherwise absent from the literature. This computational layer is designed to guide future empirical LC-MS/MS and infectivity-based confirmation rather than to replace the validation of active species in complex matrices.
 
 > **Scope:** All outputs are hypothesis-generating only and support evidence synthesis for manuscript sections 2-4 and Supplementary Information (S1-S4). They do not predict treatment performance or substitute for infectivity assays in complex environmental matrices.
 
 ---
 
-## EPEA Framework
+## Four-Barrier Antiviral Phytoremediation Model
 
-The review organises evidence and computational outputs around the **EPEA (Evidence-based Phytochemical Environmental Assessment)** four-barrier model:
+The review organises evidence and computational outputs around a four-barrier model of virus attenuation in constructed wetland systems:
 
 | Barrier | Description | Workflow connection |
 |---------|-------------|---------------------|
