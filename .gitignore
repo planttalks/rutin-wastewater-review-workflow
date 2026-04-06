@@ -25,3 +25,36 @@ redpen-distribution-1.10.4/
 
 # Optional: ignore bulky intermediate binaries
 *.pdbqt
+
+# Manuscript and reference management files (not part of the computational workflow)
+*.docx
+*.pdf
+*.ris
+*.bib
+*.enw
+data/reference*.md
+data/references_*
+
+# Binary executables and archives
+scripts/qvina*
+scripts/vina
+scripts/*.exe
+scripts/*.zip
+
+# Local IDE and tool directories
+.cursor/
+.openplanter/
+tools/
+workflow_outputs/
+
+# Local research workspace files
+AGENTS.md
+MASTER-WORKFLOW.md
+SKILLS-PARTNERSHIP-DIAITI.md
+Humanizer/
+BITE/
+plans/
+tables/
+figures/
+docs/
+mcp-*/
