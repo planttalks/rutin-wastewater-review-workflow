@@ -8,7 +8,7 @@ on:
 
 jobs:
   # -----------------------------------------------------------------------
-  # Job 1: Descriptor smoke tests (no external binaries needed)
+  # Job 1: Descriptor smoke tests (RDKit via conda)
   # -----------------------------------------------------------------------
   test-descriptors:
     name: Descriptor tests (Python ${{ matrix.python-version }})
@@ -20,24 +20,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
-
-      - name: Install RDKit via conda (most reliable)
+      - name: Set up conda + RDKit
         uses: conda-incubator/setup-miniconda@v3
         with:
-          auto-update-conda: true
           python-version: ${{ matrix.python-version }}
           channels: conda-forge,defaults
           channel-priority: strict
           activate-environment: rutin-review
           environment-file: environment.yml
 
-      - name: Install pytest
+      - name: Install pytest into conda env
         shell: bash -el {0}
-        run: pip install pytest
+        run: conda run -n rutin-review pip install pytest
 
       - name: Run smoke tests
         shell: bash -el {0}
@@ -61,7 +55,7 @@ jobs:
       - name: Install ruff
         run: pip install ruff
 
-      - name: Run ruff (warnings only — do not block on style)
+      - name: Run ruff (warnings only -- do not block on style)
         run: ruff check scripts/ tests/ --exit-zero
 
   # -----------------------------------------------------------------------
@@ -81,7 +75,6 @@ jobs:
           channels: conda-forge,defaults
           channel-priority: strict
           activate-environment: rutin-smiles
-          conda-remove-defaults: true
 
       - name: Install RDKit
         shell: bash -el {0}
